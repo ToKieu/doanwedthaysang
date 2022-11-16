@@ -1,0 +1,648 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/* phan cu */
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+a {
+    text-decoration: none;
+    color: none;
+}
+/* GIOR HANG */
+.btn-save {
+    width: auto;
+    background-color: rgb(166, 236, 171);
+    color: rgb(1, 123, 10);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.hinhdaidien{
+    width:100px;
+    height: auto;
+}
+.gio-hang-wrapper {
+    margin-left: 10%;
+    width: 80%;
+    background-image: linear-gradient(to right ,#12c2e9, #c471ed, #f64f59);
+}
+/* chinh sua cho khung dang nhap */
+.baner{
+    width: 100%;
+}
+.baner>h2{
+    color: rgb(133, 184, 226);
+    text-align: center;
+}
+.okechua .waperlog .btntat{
+    margin-top: 0px;
+    margin-right: 0px;
+}
+.okechua{
+    
+    /* background-repeat:no-repeat ; */
+    /* background-size:100vw 100vh ; */
+    height: 101vh;
+    width: 101vw;
+    /* position: absolute; */
+    position:fixed;
+    top: 0px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.541);
+    margin: 0px;
+    /* background-color: rgb(255, 5, 5); */
+    /* position: relative; */
+} 
+.waperlog{ 
+    box-shadow:10px 10px 10px rgba(133, 131, 131, 0.493);
+    /* position: sticky; */
+    margin-top: 5%;
+    margin-left: 10.5%;
+    width: 70%;
+    height: 60%;
+    background-color: rgba(44, 42, 58, 0.658);
+    /* margin: auto; */
+    padding: 2% 5% 5%;
+}
+#imglog{
+    width: 100%;
+    height: 100%;
+}
+.frmsigup{ /* khác chỗ này nha */
+    margin-top: -5%;
+    float: left;
+    height: auto;
+    width: 50%;
+    background: rgba(255, 255, 255, 0);
+}
+.frmlog{
+    float: left;
+    height: auto;
+    width: 50%;
+}
+.imglogwaper{
+    float: left;
+    height: auto;
+    width: 50%;
+    background: rgba(253, 251, 251, 0);
+}
+.login>div>input{
+    line-height: 35px;
+    width: 60%;
+    margin-top: 10px;
+    /* color: rgb(238, 9, 9); */
+}
+.main{
+    text-align: center;
+    margin-top: 15%;
+}
+.input{
+    border-color: rgb(240, 30, 30);
+    border-radius: 10px;
+    box-shadow:10px 10px 10px rgba(255, 2, 2, 0.548);
+    background-color: rgba(27, 27, 27, 0.863);
+}
+.input:optional{
+    color: aqua;
+}
+.main>input:focus{
+    border-color: rgb(94, 170, 231);
+    box-shadow:10px 10px 10px rgba(110, 138, 231, 0.493);
+    outline: rgb(94, 170, 231);;
+    
+}
+.checkrighr{
+    border-radius: 10px;
+        color: green;
+        outline:green;
+        border-color: green;
+        box-shadow:10px 10px 10px green;
+        background-color: rgba(0, 0, 0, 0.863);
+}
+.checkrighr:optional{
+    color: rgb(130, 216, 130);
+}
+.main>input::shadow{
+    color: #000;
+}
+.BTDN{
+    text-align: center;
+    margin-top: 20px;
+}
+.BTDN>button{
+    width: 60%;
+    line-height: 30px;
+    background-color: rgb(245, 243, 239);
+    border-radius: 10px;
+}
+.forget{
+    margin-top: 10px;
+    position: absolute;
+    right: 30% ;
+    color: aliceblue;
+}
+/* ket thuc form quen mat khau */
+#header{
+    height: 120px;
+    background-color: rgb(94, 170, 238);
+    border-style: groove;
+    width: 100%;
+}
+.nav {
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.nav>a {
+    color: white;
+    margin-left: 50px;
+}
+.nav>a:hover {
+    background-color: #4CAF50;
+    padding: 5px;
+    cursor: pointer;
+}
+.logo{
+    float: left;
+}
+.dangnhap{
+    padding-top: 5px;
+    margin-top: 30px;
+    float: right;
+}
+.dangnhap>button {
+    border-radius: 10px;
+    background-color: aqua;
+    padding: 5px;
+}
+.dangnhap>button>a {
+    color: red;
+    font-weight: 700;
+}
+.dangnhap>button:hover {
+    background-color: #4CAF50;
+    padding: 5px;
+    cursor: pointer;
+}
+.nav-menu{
+    background-color: black;
+    float: left;
+    margin-bottom: 50px;
+    width: 80%;
+    padding-bottom: 25px;
+}
+.body {
+    display: flex;
+    justify-content: space-between;
+    /* border-style: groove; */
+    padding: 5px;
+    width: 98%;
+}
+.left-menu {
+    width: 20%;
+    background-color: rgb(31, 148, 156);
+    padding: 10px 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 20px;
+    width: 20%;
+  
+}
+/*-------------CHI TIET SAN PHAN ----------------- */
+.wrapper_ctsp{
+    
+}
+.chitietsp{
+    display: flex;
+    width: 50%;
+    height: 300px;
+    clear: both;
+    justify-content: center;
+    background-color: rgba(230, 190, 150, 0.795);
+    padding-top: 20px;
+    
+    /* padding-bottom: 20px; */
+}
+
+.imgdemo{
+    width: 55%;
+    /* height: 10%; */
+}
+
+.imgdemo1{
+    text-align: center;
+    /* margin-bottom: 20px; */
+    width: 100%;
+    height: 80%;
+    /* box-sizing:100% ; */
+    background: #000;
+    margin-bottom: 15px;
+}
+
+.imgdemo1>img{
+    width: 100%;
+    height: 100%;
+}
+
+.imgdemo2{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 20px; */
+    
+}
+.imgdemo2>div{
+    width: 15%;
+    margin-left: 20px;
+    height: 10%;
+
+}
+.imgdemo2>div>img{
+    width: 100%;
+    height: 100%;
+}
+
+.sale{
+    width: 40%;
+    /* box-sizing: 45%; */
+}
+.sale>div{
+    margin-left: 10%;
+}
+.sale>div>h2:first-child{
+    color: red;
+}
+
+#mau{
+    height: 30px;  
+    margin-bottom: 10px;
+
+}
+
+.dau{
+    border: groove 1px;
+    border: width 1px;
+    line-height: 37px;
+    border-color: #000;
+    width: 7.5%;
+    padding: 0px 5px;
+    background-color: aliceblue;
+
+}
+
+#SL{
+    line-height: 30px;
+    text-align: center;
+}
+.TSL{
+    border-radius:10px ;
+    margin-left: 20%;
+    /* text-align: center; */
+    background: rgb(238, 43, 43);
+    font-style: italic;
+}
+.TTSP{
+    width: 48%;
+    background-color: rgba(230, 190, 150, 0.795);
+    padding: 0% 1% 0 1%;
+    box-sizing: 60%;
+}
+
+.TTSP>div>div{
+    display: flex;
+    width: 50%;
+    background-color: rgba(133, 115, 115, 0.377);
+    position: relative;
+}
+.TTSP>div{
+    display: flex;
+}
+.TTSP img{
+    width: 20px;
+    height: 20px;
+}
+.TTSP>div>div>div{
+    padding: 3px;
+
+}
+.TTSP>div>div:first-child{
+    /* background: #000; */
+    margin: 3px 1px 3px 0px;
+   
+}
+.TTSP>div>div:last-child{
+    /* background: #000; */
+    margin: 3px 0px 3px 1px;
+   
+}
+.TTSP>div>div>div:last-child{
+    position: absolute;
+    right: 0px;
+    /* background: #000; */
+}
+
+/*-------------CHI TIET SAN PHAN ----------------- */
+
+/*--------- CSS LEFT MENU------------*/
+.select-css {
+	display: block;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #444;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 100%;
+	max-width: 100%; 
+	box-sizing: border-box;
+	margin: 0;
+	border: 1px solid #aaa;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	border-radius: .5em;
+	background-position: right .7em top 50%, 0 0;
+	background-size: .65em auto, 100%;
+}
+.select-css::-ms-expand {
+	display: none;
+}
+.select-css:hover {
+	border-color: #888;
+}
+.select-css:focus {
+	border-color: #aaa;
+	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: #222; 
+	outline: none;
+}
+.select-css option {
+	font-weight:normal;
+}
+.danhmuc {
+    border-style: groove;
+    border-color: blue;
+    background-color: rgb(163, 186, 34);
+    color: rgb(153, 34, 34);
+    text-align: center;
+}
+.danhmuc2 {
+    background-color: rgb(174, 202, 48);
+}
+.Sanpham {
+    width: 20%;
+    background-color: burlywood;
+    padding: 1px 1px;
+    margin-top: 10px;
+    text-align: center;
+}
+label {
+    font-weight: 700;
+    font-size: 20px;
+}
+/* ---------------CSS LEFT MENU -------*/
+.body {
+    display: flex;
+}
+
+.content {
+    margin-left: 4%;
+    padding-left: 10px;
+    width: 90%;
+    background-color: aquamarine;
+    height: auto;
+    padding-bottom: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 20px;
+}
+.tenxe{
+    font-family: sans-serif;
+}
+.lienhe {
+   width: 100%;
+    font-family: sans-serif;
+    margin: 3px; 
+    margin-top: 7px;
+    text-align: center;
+}
+.product {
+    border-style: groove;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    margin: 20px;
+    float: left;
+    border-color: blueviolet;
+    background-color: yellow;
+    text-align: center;
+    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.product img{
+    width: 90%;
+    height: 80%;
+    image-rendering: pixelated;
+    object-fit:fill;
+    padding: 5px;
+}
+.product p{
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    display: block;
+    width: 90%;
+    background-color: yellowgreen;
+    margin-left: 30px;
+    margin-top:20px;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 20px;
+}
+.button {  
+    margin-top: 14%;
+}
+.trang{
+    width: 100%;
+    margin-top: 30px;   
+}
+/* Phân trang */
+.pagination {
+    margin-left: 100%;
+
+}
+ 
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+} 
+.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.pagination a:last-child {
+    border-bottom-right-radius: 5px;
+}
+/* Phân thân cuoi chuong trinh */
+.footer {
+    width: 100%;
+    margin-bottom: 50px;
+}
+.lienlac{
+    width: 100%;
+    font-family: sans-serif;
+    margin: 3px;
+    display: flex;
+    float: left;
+    background-color: black;
+    color: aliceblue;
+    margin-top: 200px;
+    justify-content: space-around;
+    padding: 30px 0; 
+}
+.tell {
+    /* margin-left: 400px; */
+    width: 10%;
+    border: 2px solid black ;
+    
+}
+.hoptac{
+    margin-left: 100px;
+    width: 10%;
+    border: 2px solid black ;
+    
+}
+.bpkd{
+    margin-left: 100px;
+    width: 10%;
+    border: 2px solid black ;
+    
+}
+.cskh{
+    margin-left: 100px;
+    width: 10%;
+    border: 2px solid black ;
+    
+}
+.thongtin{
+    background-color: black;
+    width: 100%;
+    display: flex;
+}
+.menubottom{
+    margin-left: 150px;
+    width: 25%;
+    float: left;
+    border: 1px soid black ;
+    color: #ddd;
+}
+.loiket{
+    margin-left: 150px;
+    width: 25%;  
+    border: 1px soid black ;
+    color: #ddd;
+}
+.lienketicon{
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 25%;
+    border: 1px soid black ;
+    /* background-color: white; */
+}
+.lienketicon>a>img{
+    background-color: white;
+}
+.lienketicon>a>img:hover{
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+.nav1{
+    padding: 5px;
+}
+.nav1>a {
+    color: #ddd ;
+}
+.nav1>a:hover {
+    background-color: #4CAF50;
+    cursor: pointer;
+}
+
+
+/* @media only screen and (max-width: 600px) {
+    .header-menu li {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        padding: 0;
+    }
+    .letf-menu {
+        width: 30%;
+        height: 10%;
+    }
+    .content {
+        width: 70%;
+    }
+    .right {
+        display: none;
+    }
+    .wrapper {
+        display: block;
+    width: 85%;
+    background-color: yellowgreen;
+    margin-left: 5%;
+    margin-top:20px;
+    padding: 15px;
+
+    }
+    .product-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-style: groove;
+    margin-bottom: 20px;
+    border-color: blue;
+    margin-top: 15px;
+    flex-wrap:wrap;
+    align-content: stretch;
+    }
+
+    .product {
+        border-style: groove;
+        width: 75%;
+        height: 200px;
+        margin: 5%;
+        border-color: blueviolet;
+        background-color: yellow;
+        margin-left: 12%;
+    }
+
+    .content {
+        width: 60%;
+        border-style: groove;
+        background-color: aquamarine;
+        height: 100%;
+
+    }
+
+
+    .footer {
+        height: 100px;
+        background-color: beige;
+        border-style: groove;
+        margin-top: 10px;
+    }
+} */

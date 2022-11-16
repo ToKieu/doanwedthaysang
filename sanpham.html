@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="format.css">
+    <script src="dieukhien.js"defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="./img/logo.png" width="70px" height="70px">
+        <div class="nav-menu">
+            <div class="nav"><a href="" onclick="trangchu()">TRANG CHỦ</a> </div>
+            <div class="nav"><a href="" onclick="hienbrand()">GIỚI THIỆU</a></div>
+            <div class="nav"><a href="" onclick="sanpham()">SẢN PHẨM</a></div>
+            <div class="nav"><a href="" onclick="lienhe()">LIÊN HỆ</a></div>
+        </div>
+        <div id="cacbutton" class="dangnhap">
+           
+        </div>
+    </div>
+    <div id="popup"></div>
+    <div class="body">
+        <div class="left-menu">
+            <div class="danhmuc">
+                <h2>LỌC SẢN PHẨM</h2>
+            </div>
+            <hr  width="90%" align="center" />
+            <h3>TÌM KIẾM</h3>
+            <input type="text" onkeyup="timkiemxe()" placeholder="Nhập tên xe" id="timkiem">
+            <button onclick="timkiemxe()">LỌC</button>
+            <hr  width="90%" align="center" />
+            <div class="danhmuc2">
+                <h2>Giá</h2>
+            </div>
+            <input type="radio" id="gia" name="gia" checked="checked" onclick="hientrang(1),phantrang()">
+            <label> Tất cả</label><br>
+            <input type="radio" id="gia" name="gia" onclick="locgia(2000000000,5000000000)">
+            <label> Từ 2tỷ VNĐ - 5tỷ VNĐ </label><br>
+            <input type="radio" id="gia" name="gia" onclick="locgia(5000000000,10000000000)">
+            <label> Từ 5tỷ VNĐ - 10tỷ VNĐ</label><br>
+            <input type="radio" id="gia" name="gia" onclick="locgia(10000000000,1000000000000)">
+            <label> Trên 10tỷ VNĐ</label>
+            <hr width="90%" align="center" />
+            <div class="danhmuc2">
+                <h2>Thương hiệu</h2>
+            </div>
+            <select class="select-css" name="cars" onchange="loc(value)" id="thuonghieu">
+            </select>
+            <hr width="90%" align="center" />
+        </div>
+        <div class="content">
+            <div class="Sanpham">
+                <h1>SẢN PHẨM</h1>
+            </div>
+            <hr width="90%" align="center" />
+            <label for="cars">Sắp xếp theo:</label>
+            <select class="sapxep" name="xapxep" id="sapxep" onchange="sapxep(value)">
+                <option value="0">Mặc định</option>
+                <option value="1">Giá (Thấp->Cao)</option>
+                <option value="2">Giá (Cao->Thấp)</option>
+            </select>
+            <div class="wrapper">
+                <div id="product-wrapper" class="product-wrapper">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="trang">
+        <div id= "pagination" class="pagination">
+        </div>
+    </div>
+    <!-- Class footer -->
+    <div class="footer">
+        <!-- <hr  width="90%" align="center" color="black"/> -->
+        <div class="lienlac">
+            <div class="tell">
+                <div>Hotline (24/7)</div>
+                <p>Tell: <a href="tel:+84123456789">+84123456789</a></p>
+            </div>
+            <div class="hoptac">
+                <div>Hợp tác với chúng tôi </div>
+                <p>Tell: <a href="tel:+84123456789">+84123456789</a></p>
+                <p>Email: <a href="mailto: chucomail@gmail.com.com">chucomail@gmail.com</a>
+            </div>
+            <div class="bpkd">
+                <div>Bộ phận kinh doanh</div>
+                <p>Tell: <a href="tel:+84123456789">+84123456789</a></p>
+                <p>Email: <a href="mailto: chucomail@gmail.com.com">chucomail@gmail.com</a>
+            </div>
+            <div class="cskh">
+                <div>Chăm sóc khách hàng</div>
+                <p>Tell: <a href="tel:+84123456789">+84123456789</a></p>
+                <p>Email: <a href="mailto: chucomail@gmail.com.com">chucomail@gmail.com</a>
+            </div>
+        </div>
+
+    </div>
+    <hr width="90%" align="center" color="black" />
+    <div class="thongtin">
+        <div class="loiket">
+            <h3>TEN TRANG WED</h3>
+            <p>Tiên phong dòng xe nhập khẩu cao cấp.
+                Với nhiều ưu điểm nổi bật trong chất lượng sản phẩm, dịch vụ và giá cả,
+                LUXURYCAR1 ngày càng trở thành sự lựa chọn hàng đầu của đông đảo khách
+                hàng khi có nhu cầu mua xe với chất lượng và phục vụ tốt nhất.</p>
+            <div>
+                <p>437 Giải Phóng, Thanh Xuân, Hà Nội</p>
+                <p><a href="tel:+84123456789">+84123456789</a></p>
+                <p><a href="mailto: chucomail@gmail.com.com">chucomail@gmail.com</a>
+
+            </div>
+        </div>
+        <div class="menubottom">
+            <h3>Menu chính</h3>
+            <div class="nav1"><a href="">Trang chủ</a> </div>
+            <div class="nav1"><a href="">Giới thiệu</a></div>
+            <div class="nav1"><a href="">Sản phẩm</a></div>
+            <div class="nav1"><a href="">Tư vấn trả góp</a></div>
+            <div class="nav1"><a href="">Tạp chí xe</a></div>
+            <div class="nav1"><a href="">Liên hệ</a></div>
+        </div>
+        <div class="lienketicon">
+            <a href="https://www.facebook.com/" target="_blank"><img src="./img/facebook.png" width="50px"
+                    height="50px"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="./img/instagram.png" width="50px"
+                    height="50px"></a>
+            <a href="https://www.twitter.com/" target="_blank"><img src="./img/twitter.png" width="50px" height="50px"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="./img/youtube.png" width="50px" height="50px"></a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
