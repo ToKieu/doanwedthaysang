@@ -20,8 +20,24 @@ a {
 }
 .gio-hang-wrapper {
     margin-left: 10%;
+    margin-top: 10%;
     width: 80%;
     background-image: linear-gradient(to right ,#12c2e9, #c471ed, #f64f59);
+}
+.okechua .gio-hang-wrapper .btntat{
+    position: relative;
+    margin-top: 0px;
+    padding-left:10px ;
+    padding-right: 10px;
+    margin-left: 97.3%;
+    font-size: 30px;
+    background-color: aliceblue;
+    border: hidden;
+    border-radius: 10px;
+}
+.okechua .waperlog .tt{
+    font-size: 20px;
+    
 }
 /* chinh sua cho khung dang nhap */
 .baner{
@@ -227,7 +243,6 @@ a {
 .imgdemo{
     width: 50%;
 }
-
 .imgdemo1{
     width: 100%;
     text-align: left;

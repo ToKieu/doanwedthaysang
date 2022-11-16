@@ -49,7 +49,7 @@ function dangnhap() {
                 <div id="checkbox"></div>\
             </div>\
             <div class="frmlog">\
-                <form class="login" onsubmit="return checkligh(\'\',1,1)"method="post">\
+                <form class="login" onsubmit="return checkligh(\'\',1,1)"method="">\
 \
                     <div class="main">\
                         <input type="email"  name="foremail"   class="input"     id="foremail"  onclick="checkligh(\'foremail\',0,1)"  onkeydown="checkligh(\'foremail\',0,1)"        placeholder="Nhập email( Tài Khoản)" >\
@@ -82,7 +82,7 @@ function dangky()
             <div id="checkbox"></div>\
         </div>\
         <div class="frmsigup" >\
-            <form class="login" onsubmit="return checkligh(\'\',1,3)" method="post">\
+            <form class="login" onsubmit="return checkligh(\'\',1,3)" method="">\
                 \
                 <div class="main">\
                 <input type="text"  name="hoten" class="input"  id="hoten" placeholder="Nhập họ tên" >\
@@ -114,7 +114,7 @@ function quenmatkhau(){
             <div id="checkbox"></div>\
         </div>\
         <div class="frmlog">\
-            <form class="login" onsubmit="return checkligh(\'\',1,2)" method="post">\
+            <form class="login" onsubmit="return checkligh(\'\',1,2)" method="">\
                 \
                 <div class="main">\
                     <input type="email"  name="foremail"   class="input"     id="foremail"  onclick="checkligh(\'foremail\',0,2)"  onkeydown="checkligh(\'foremail\',0,2)" placeholder="Nhập email" >\
@@ -233,10 +233,10 @@ function kiemtradangnhap() {
             var IDuser=users[i].IDuser;
             alert("Đăng nhập thành công");
             localStorage.setItem('DN',IDuser);
-            return 0;
+
         }
     }
-    alert('Bạn đã nhập sai tài khoản hay mật khẩu vui lòng đăng nhập hoặc đăng kí lại');
+    // alert('Bạn đã nhập sai tài khoản hay mật khẩu vui lòng đăng nhập hoặc đăng kí lại');
 }
 function khoxe() {
     if(localStorage.getItem('dk')==null)
@@ -630,7 +630,9 @@ function hiengiohang()
         alert('Bạn cần phải đăng nhâp');
     }
     else{
-        var giohang='<div class="gio-hang-wrapper">\
+        var giohang='<div class="okechua">\
+        <div class="gio-hang-wrapper">\
+        <button class="btntat" onclick="tat()">X</button>\
         <div class="container mt-4">\
             <h1 class="text-center">Giỏ hàng</h1>\
             <h2><b> Các sản phẩm trong giỏ </b></h2>\
@@ -677,7 +679,7 @@ function hiengiohang()
             </div>\
         </div>\
     </div>\
-    <button onclick="tat()">ĐÓNG</button>';
+    </div>';
     document.getElementById( 'popup').innerHTML=giohang;
     }
     
@@ -715,7 +717,7 @@ function hienspgiohang(){
             <a id="delete_1" data-sp-ma="2" onclick="xoadonhang('+donhangs[i].IDdh+')" class="btn btn-danger btn-delete-sanpham">\
                 <i class="fa fa-trash" aria-hidden="true"></i> Xóa\
             </a>\
-            <button onclick="thanhtoan('+donhangs[i].IDdh+')" class="btn btn-save" type="button">Thanh toán</button>\
+            <button onclick="hienthanhtoan('+donhangs[i].IDdh+')" class="btn btn-save" type="button">Thanh toán</button>\
         </td>\
          </tr>'
         }
@@ -894,4 +896,41 @@ function hienlichsu()
        
     }
     document.getElementById('splichsu').innerHTML=splichsu;
+}
+function hienthanhtoan(IDdh){
+    var donhangs=JSON.parse(localStorage.getItem('donhangs'));
+    var cars=JSON.parse(localStorage.getItem('cars'));
+    var users=JSON.parse(localStorage.getItem('users'));
+    var i,j,k;
+    for(i=0;i<donhangs.length;i++){
+        if(donhangs[i].IDdh==IDdh)
+        {
+            for(j=0;j<cars.length;j++){
+                if(donhangs[i].IDxe==cars[j].IDxe)
+                {
+                    break;
+                }
+            }
+            for(k=0;k<users.length;k++)
+            {
+                if(users[k].IDuser==donhangs[i].IDuser)
+                {
+                    break;
+                }
+            }
+        break;
+        }
+    }
+    var giohang=`<div class="okechua">
+        <div class="waperlog"
+            <h2>Thanh toán</h2>
+            <p class="tt" >Mã đơn hàng`+donhangs[i].IDdh+`</p>
+            <p class="tt" >Tên sản phẩm:`+cars[j].tenxe+`</p>
+            <p class="tt" >Số lượng:`+donhangs[i].soluong+`</p>
+            <p class="tt" >Khách hàng:`+users[k].hoten+`</p>
+            <p class="tt" >Tổng số tiền:`+donhangs[i].sotien+`</p>
+            <button onclick="thanhtoan(`+donhangs[i].IDdh+`)" class="btn btn-save" type="button">Xác nhận hanh toán</button>\
+        </div>
+    </div>`;
+    document.getElementById('popup').innerHTML=giohang;
 }
