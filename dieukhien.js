@@ -29,14 +29,22 @@ function kiemtradadn()
 {
     if(localStorage.getItem('DN')==-1)
     {
-        document.getElementById('cacbutton').innerHTML='<input type="button" id="btdangnhap" value="Dangnhap" onclick="dangnhap()" />\
-        <input type="button" id="btdangky" value="Dangky" onclick="dangky()" />';
+        document.getElementById('cacbutton').innerHTML='<input type="button" id="btdangnhap" value="Đăng nhập" onclick="dangnhap()" />\
+        <input type="button" id="btdangky" value="Đăng ký" onclick="dangky()" />';
     }
     else
     {
-            document.getElementById('cacbutton').innerHTML=' <input type="button" id="btdangxuat" value="Dangxuat" onclick="dangxuat()"/>\
-        <input type="button" id="btgiohang" value="giohang" onclick="hiengiohang(),hienspgiohang(),hienlichsu()" />\
-        <a href="admin.html">Admin nè</a>'; 
+        if(localStorage.getItem('DN')==0)
+        {
+            document.getElementById('cacbutton').innerHTML=' <input type="button" id="btdangxuat" value="Đăng xuất" onclick="dangxuat()"/>\
+            <input type="button" id="btgiohang" value="Giỏ Hàng" onclick="hiengiohang(),hienspgiohang(),hienlichsu()" />\
+            <a href="admin.html">Trang quản trị</a>';
+        }
+             
+        else{
+            document.getElementById('cacbutton').innerHTML=' <input type="button" id="btdangxuat" value="Đăng xuất" onclick="dangxuat()"/>\
+            <input type="button" id="btgiohang" value="Giỏ Hàng" onclick="hiengiohang(),hienspgiohang(),hienlichsu()" />';
+        }
     }
 }
 function dangnhap() {
@@ -925,11 +933,12 @@ function hienthanhtoan(IDdh){
         <div class="waperlog"
             <div class="waper1"
                 <h2>Thanh toán</h2>
-                <p class="tt" >Mã đơn hàng`+donhangs[i].IDdh+`</p>
-                <p class="tt" >Tên sản phẩm:`+cars[j].tenxe+`</p>
-                <p class="tt" >Số lượng:`+donhangs[i].soluong+`</p>
-                <p class="tt" >Khách hàng:`+users[k].hoten+`</p>
-                <p class="tt" >Tổng số tiền:`+donhangs[i].sotien+`</p>
+                <p class="tt" >Mã đơn hàng: `+donhangs[i].IDdh+`</p>
+                <p class="tt" >Tên sản phẩm: `+cars[j].tenxe+`</p>
+                <p class="tt" >Số lượng: `+donhangs[i].soluong+`</p>
+                <p class="tt" >Khách hàng: `+users[k].hoten+`</p>
+                <p class="tt" >Tổng số tiền: `+formattien(donhangs[i].sotien)+` VNĐ</p>
+                <p class="tt">Thời gian đặt hàng: `+laytg()+`</p>
                 <button onclick="thanhtoan(`+donhangs[i].IDdh+`)" class="btn btn-save" type="button">Xác nhận hanh toán</button>
                 <button onclick="tat()" class="btn btn-close" type="button">thoats</button>
             </div>
