@@ -923,13 +923,16 @@ function hienthanhtoan(IDdh){
     }
     var giohang=`<div class="okechua">
         <div class="waperlog"
-            <h2>Thanh toán</h2>
-            <p class="tt" >Mã đơn hàng`+donhangs[i].IDdh+`</p>
-            <p class="tt" >Tên sản phẩm:`+cars[j].tenxe+`</p>
-            <p class="tt" >Số lượng:`+donhangs[i].soluong+`</p>
-            <p class="tt" >Khách hàng:`+users[k].hoten+`</p>
-            <p class="tt" >Tổng số tiền:`+donhangs[i].sotien+`</p>
-            <button onclick="thanhtoan(`+donhangs[i].IDdh+`)" class="btn btn-save" type="button">Xác nhận hanh toán</button>\
+            <div class="waper1"
+                <h2>Thanh toán</h2>
+                <p class="tt" >Mã đơn hàng`+donhangs[i].IDdh+`</p>
+                <p class="tt" >Tên sản phẩm:`+cars[j].tenxe+`</p>
+                <p class="tt" >Số lượng:`+donhangs[i].soluong+`</p>
+                <p class="tt" >Khách hàng:`+users[k].hoten+`</p>
+                <p class="tt" >Tổng số tiền:`+donhangs[i].sotien+`</p>
+                <button onclick="thanhtoan(`+donhangs[i].IDdh+`)" class="btn btn-save" type="button">Xác nhận hanh toán</button>
+                <button onclick="tat()" class="btn btn-close" type="button">thoats</button>
+            </div>
         </div>
     </div>`;
     document.getElementById('popup').innerHTML=giohang;
