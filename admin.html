@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:description" content="Welcome to my Website" />
+
+    <title>Quản Lý Bán Hàng</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./customer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="./dieukhienadmin.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> QUẢN LÝ BÁN HÀNG</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-san-pham active"><a href="#" data-placement="bottom" onclick="hientrangsanpham(),hiensp()" title="SẢN PHẨM">SẢN PHẨM</a></li>
+                    <li><a class="nav-don-hang" href="#" data-placement="bottom" onclick="hientrangdonhang(),hiendonhang()" title="ĐƠN HÀNG">ĐƠN HÀNG</a></li>
+                    <li><a class="nav-thong-ke" href="#" data-placement="bottom" onclick="hientrangthongke(),hienspbanchay(),hientongdonhang(),hiensanphamdahet(),hiendonhangdahuy()" title="THỐNG KÊ">THỐNG KÊ</a></li>
+                    <li>
+                        <a href="#" data-placement="bottom" title="TÀI KHOẢN"><b>Tài Khoản</b>
+                            <span class="caret"></span>
+                            <ul class="subnav" style="right: 0;">
+                                <li><a href="">Trang cá nhân</a></li>
+                                <li><a href="./sanpham.html" data-placement="bottom" title="ĐĂNG XUẤT"><b>Thoát<i class="fas fa-sign-out-alt"></i></b></a></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid al">
+        <div id="clock"></div>
+        <Br>
+        <!-- QL SAM PHAM  -->
+        <div id="thaydoi">
+            <div id="themsp"></div> <p class="timkiemsanpham"><b>TÌM KIẾM SẢN PHẨM:</b></p>
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên sản phẩm cần tìm...">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <button onclick="hientrangthemsanpham()">THEM SAN PHAM</button>
+                <table class="table table-hover table-bordered table-san-pham" id="sampleTable">
+                <thead>
+                    <tr>
+                        <th width="10"><input type="checkbox" id="all"></th>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ảnh</th>
+                            <th>Nhãn hiệu</th>
+                            <th>Số lượng</th>
+                            <th>Giá tiền</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sanpham">
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    <hr class="hr1">
+</body>
+
+</html>
