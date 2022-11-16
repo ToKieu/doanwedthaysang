@@ -75,6 +75,7 @@ function dangky()
     var DK = '<div class="okechua" onclick="checkligh(\'\',0,3)">\
     \
     <div class="waperlog" onclick="checkligh(\'\',0,3)">\
+    <button class="btntat" onclick="tat()">X</button>\
         <span class="baner"><h2>ĐĂNG KÝ TÀI KHOẢN MỚI</h2></span>\
         <div class="imglogwaper">\
             <img id="imglog" src="./img/pngwing.com.png">\
@@ -97,7 +98,6 @@ function dangky()
                 </div>\
                 <div class="forget">\
                     <a href ="#" onclick="dangnhap()"><b>về trang đăng nhập</b></a>\
-                    <button onclick="tat()">Tắt</button>\
                 </div>\
             </form>\
         </div>\
@@ -107,6 +107,7 @@ function dangky()
 function quenmatkhau(){
     var QMK = '<div class="okechua">\
     <div class="waperlog" onclick="checkligh(\'\',0,2)">\
+    <button class="btntat" onclick="tat()">X</button>\
         <span class="baner"><h2>QUÊN MẬT KHẨU</h2></span>\
         <div class="imglogwaper">\
             <img id="imglog" src="./img/pngwing.com.png">\
@@ -125,7 +126,6 @@ function quenmatkhau(){
                 </div>\
                 <div class="forget">\
                     <a href ="#" onclick="dangnhap()"><b>về trang đăng nhập</b></a>\
-                    <button onclick="tat()">Tắt</button>\
                 </div>\
             </form>\
         </div>\
@@ -537,7 +537,8 @@ function showchitietsp(IDxe){
     }
     var ctsp='';
     ctsp += '<div class="okechua">\
-    <div>\
+    <div class="waperlog" >\
+        <button class="btntat" onclick="tat()">X</button>\
     <div class="chitietsp">\
         <div class="imgdemo">\
             <div class="imgdemo1" id="imgdemo1"><img src="'+cars[i].img+'"></div>\

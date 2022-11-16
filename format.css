@@ -44,8 +44,16 @@ a {
     text-align: center;
 }
 .okechua .waperlog .btntat{
+    position: relative;
     margin-top: 0px;
-    margin-right: 0px;
+    padding-left:10px ;
+    padding-right: 10px;
+    margin-left: 100%;
+    font-size: 30px;
+    background-color: aliceblue;
+    border: hidden;
+    border-radius: 10px;
+    
 }
 .okechua{
     
