@@ -1,16 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-/* phan cu */
 * {
     font-family: 'Times New Roman', Times, serif;
 }
@@ -73,9 +61,9 @@ a {
 .waperlog{ 
     box-shadow:10px 10px 10px rgba(133, 131, 131, 0.493);
     /* position: sticky; */
-    margin-top: 5%;
-    margin-left: 10.5%;
-    width: 70%;
+    margin-top: 7%;
+    margin-left: 20%;
+    width: 60%;
     height: 60%;
     background-color: rgba(44, 42, 58, 0.658);
     /* margin: auto; */
@@ -225,61 +213,34 @@ a {
   
 }
 /*-------------CHI TIET SAN PHAN ----------------- */
-.wrapper_ctsp{
-    
-}
+
 .chitietsp{
     display: flex;
-    width: 50%;
-    height: 300px;
+    width: 100%;
+    height: 100%px;
     clear: both;
     justify-content: center;
     background-color: rgba(230, 190, 150, 0.795);
     padding-top: 20px;
-    
-    /* padding-bottom: 20px; */
 }
 
 .imgdemo{
-    width: 55%;
-    /* height: 10%; */
+    width: 50%;
 }
 
 .imgdemo1{
-    text-align: center;
-    /* margin-bottom: 20px; */
     width: 100%;
-    height: 80%;
-    /* box-sizing:100% ; */
-    background: #000;
-    margin-bottom: 15px;
+    text-align: left;
+    height: auto;
 }
 
 .imgdemo1>img{
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: auto;
 }
-
-.imgdemo2{
-    display: flex;
-    justify-content: center;
-    /* margin-top: 20px; */
-    
-}
-.imgdemo2>div{
-    width: 15%;
-    margin-left: 20px;
-    height: 10%;
-
-}
-.imgdemo2>div>img{
-    width: 100%;
-    height: 100%;
-}
-
 .sale{
     width: 40%;
-    /* box-sizing: 45%; */
+
 }
 .sale>div{
     margin-left: 10%;
@@ -317,7 +278,7 @@ a {
     font-style: italic;
 }
 .TTSP{
-    width: 48%;
+    width: 100%;
     background-color: rgba(230, 190, 150, 0.795);
     padding: 0% 1% 0 1%;
     box-sizing: 60%;
