@@ -56,13 +56,12 @@ function laytg()
 function hientrangsanpham()
 {
     var trangsanpham= `<div id="themsp"></div> <p class="timkiemsanpham"><b>TÌM KIẾM SẢN PHẨM:</b></p>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên sản phẩm cần tìm...">
-    <i class="fa fa-search" aria-hidden="true"></i>
-    <button onclick="hientrangthemsanpham()">THEM SAN PHAM</button>
+    <input type="text" id="myInput" onkeyup="timkiemxe()" placeholder="Nhập tên sản phẩm cần tìm...">
+    <i class="fa fa-search" onclick="timkiemxe()" aria-hidden="true"></i>
+    <button onclick="hientrangthemsanpham()">Thêm sản phẩm</button>
     <table class="table table-hover table-bordered table-san-pham" id="sampleTable">
     <thead>
         <tr>
-            <th width="10"><input type="checkbox" id="all"></th>
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Ảnh</th>
@@ -83,7 +82,6 @@ function hiensp(){
     var cars=JSON.parse(localStorage.getItem('cars'));
     for(var i=0;i<cars.length;i++) {
         sp += '<tr>\
-        <td width="10"><input type="checkbox" name="check1" value="1"></td>\
         <td>'+cars[i].IDxe+'</td>\
         <td>'+cars[i].tenxe +'</td>\
         <td><img src="'+cars[i].img+'" alt="" width="100px;"></td>\
@@ -191,10 +189,10 @@ function themxe(){
 
 }
 function hientrangdonhang(){
-    var trangdonhang ='<table class="table table-hover table-bordered table-don-hang" id="sampleTable">\
+    var trangdonhang ='<div id="trangchinhsuadh"></div>\
+    <table class="table table-hover table-bordered table-don-hang" id="sampleTable">\
         <thead>\
             <tr>\
-                <th width="10"><input type="checkbox" id="all"></th>\
                 <th>ID đơn hàng</th>\
                 <th>Khách hàng</th>\
                 <th>Đơn hàng</th>\
@@ -215,7 +213,8 @@ function hiendonhang()
     var cars=JSON.parse(localStorage.getItem('cars'));
     var users=JSON.parse(localStorage.getItem('users'));
     var hiendh='';
-    for(var i=0;i<donhangs.length;i++)
+    var i;
+    for(i=0;i<donhangs.length;i++)
     {
         var j;
         if(donhangs[i].tinhtrang==1)
@@ -236,16 +235,15 @@ function hiendonhang()
                 }
             }
             hiendh+=' <tr>\
-            <td width="10"><input type="checkbox" name="check1" value="1"></td>\
             <td>'+donhangs[i].IDdh+'</td>\
             <td>'+users[k].hoten+'</td>\
             <td>'+cars[j].tenxe+'</td>\
             <td>'+donhangs[i].soluong+'</td>\
             <td>'+formattien(donhangs[i].sotien)+' VNĐ</td>\
             <td><span class="badge bg-success">Chờ xác nhận</span></td>\
-            <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i\
+            <td><button class="btn btn-primary btn-sm trash" onclick="huydonhang('+donhangs[i].IDdh+')" type="button" title="Hủy đơn"><i\
                         class="fas fa-trash-alt"></i> </button>\
-                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i\
+                <button class="btn btn-primary btn-sm edit" type="button" onclick="hientrangchinhsua('+donhangs[i].IDdh+')" title="Chỉnh sửa"><i\
                         class="fa fa-edit"></i></button>\
                         <button onclick="xacnhandonhang('+donhangs[i].IDdh+')"type="button" class="btn btn-success">Xác nhận</button>\
             </td>\
@@ -758,7 +756,95 @@ function trangchinhsua(IDxe)
     </div>';
     document.getElementById('themsp').innerHTML=trangchinhsua;
 }
-function chinhsuadonhang()
+function timkiemxe()
 {
+    var cars=JSON.parse(localStorage.getItem('cars'));
+    var tenxe = document.getElementById('timkiem').value;
+    var sp='';
+    for(var i=0;i<cars.length;i++) {
+        if(cars[i].tenxe.includes(tenxe))
+        {
+            sp += '<tr>\
+            <td>'+cars[i].IDxe+'</td>\
+            <td>'+cars[i].tenxe +'</td>\
+            <td><img src="'+cars[i].img+'" alt="" width="100px;"></td>\
+            <td>'+cars[i].brand+'</td>\
+            <td>'+cars[i].soluong+'</td>\
+            <td>'+formattien(cars[i].gia) +' VNĐ</td>\
+            <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"\
+                    onclick="xoasanpham('+cars[i].IDxe+')")"><i class="fas fa-trash-alt"></i>\
+                </button>\
+                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" onclick="trangchinhsua('+cars[i].IDxe+')" id="show-emp"\
+                    data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i></button>\
+            </td>\
+        </tr>';
+        }
+    }
+    document.getElementById('sanpham').innerHTML = sp;
     
+}
+function hientrangchinhsua(IDdh){
+   var donhangs =JSON.parse(localStorage.getItem('donhangs'));
+    var i,j,k;
+    for(i=0;i<donhangs.length;i++){
+        if(donhangs[i].IDdh==IDdh){
+            break;
+        }
+    }
+    var trangchinhsuadh= '<div class="form-them-sp">\
+        <div class="row1">\
+            <h3 class="tile-title">Chỉnh sửa đơn hàng</h3>\
+        </div>\
+        <div class="chia-hang">\
+            <div class="form-group col-md-3">\
+                <label class="control-label">Số lượng </label>\
+                <input id="soluong" value="'+donhangs[i].soluong+' "class="form-control" type="text" placeholder="">\
+            </div>\
+        </div>\
+        <div class="button-chinh-sua">\
+            <button class="btn btn-save" onclick="chinhsuadh('+IDdh+')" type="button">Lưu lại</button>\
+            <a class="btn btn-cancel" onclick="hientrangdonhangh(),hiendonhang()" href="#">Hủy bỏ</a>\
+        </div>\
+    </div>';
+    document.getElementById('trangchinhsuadh').innerHTML=trangchinhsuadh;
+}
+function chinhsuadh(IDdh){
+    var donhangs=JSON.parse(localStorage.getItem('donhangs'));
+    var i;
+    for(i=0;i<donhangs.length;i++){
+        if(donhangs[i].IDdh==IDdh)
+        {
+            break;
+        }
+    }
+    donhangs[i].soluong=document.getElementById('soluong').value;
+    localStorage.setItem('donhangs',JSON.stringify('donhangs'));
+    location.reload();
+}
+function huydonhang(IDdh)
+{
+    var  donhangs =JSON.parse(localStorage.getItem('donhangs'));
+    var cars=JSON.parse(localStorage.getItem('cars'));
+    var dhhuys=JSON.parse(localStorage.getItem('dhhuy'));
+    var dhhuy=[];
+    for(var i=0;i< donhangs.length;i++){
+        if(donhangs[i].IDdh==IDdh)
+            {
+                for(var j=0;j< cars.length;j++){
+                    if(cars[j].IDxe==donhangs[i].IDxe)
+                    {
+                        cars[j].soluong+=donhangs[i].soluong;
+                    }
+                }
+                donhangs[i].tinhtrang=3;
+                var IDdh=donhangs[i].IDdh;
+                var tg=laytg();
+                var dhhuy={IDdh,tg};
+                dhhuys.push(dhhuy);
+            }
+    }
+    localStorage.setItem("dhhuys",JSON.stringify(dhhuys));
+    localStorage.setItem('donhangs', JSON.stringify(donhangs));
+    localStorage.setItem('cars', JSON.stringify(cars));
+    location.reload();
 }

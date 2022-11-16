@@ -58,13 +58,12 @@
         <!-- QL SAM PHAM  -->
         <div id="thaydoi">
             <div id="themsp"></div> <p class="timkiemsanpham"><b>TÌM KIẾM SẢN PHẨM:</b></p>
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nhập tên sản phẩm cần tìm...">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <button onclick="hientrangthemsanpham()">THEM SAN PHAM</button>
+                <input type="text" id="timkiem" onkeyup="timkiemxe()" placeholder="Nhập tên sản phẩm cần tìm...">
+                <i class="fa fa-search" onclick="timkiemxe()" aria-hidden="true"></i>
+                <button onclick="hientrangthemsanpham()">Thêm sản phẩm</button>
                 <table class="table table-hover table-bordered table-san-pham" id="sampleTable">
                 <thead>
                     <tr>
-                        <th width="10"><input type="checkbox" id="all"></th>
                             <th>Mã sản phẩm</th>
                             <th>Tên sản phẩm</th>
                             <th>Ảnh</th>
